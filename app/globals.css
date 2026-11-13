@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #003B2B;
+  --fg: #FFFFFF;
+  --muted: #94A3B8;
+  --panel: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #FFC400;
+  --accent-fg: #003B2B;
+}
+
+.light {
+  --bg: #FFFFFF;
+  --fg: #003B2B;
+  --muted: #475569;
+  --panel: rgba(0, 59, 43, 0.05);
+  --border: rgba(0, 59, 43, 0.10);
+  --accent: #FFC400;
+  --accent-fg: #003B2B;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-muted: var(--muted);
+  --color-panel: var(--panel);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --font-inter: var(--font-inter);
+  --font-sarabun: var(--font-sarabun);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sarabun), var(--font-inter), system-ui, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 59, 43, 0.25);
+}
+
+:focus-visible {
+  outline: 2px solid #FFC400;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #FFC400;
+  color: #003B2B;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
